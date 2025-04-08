@@ -180,7 +180,7 @@
   }
 
   .startup-form_btn {
-    @apply bg-primary border-[4px] border-black rounded-full p-5 min-h-[70px] w-full font-bold text-[18px] ;
+    @apply bg-primary border-[4px] border-black rounded-full p-5 min-h-[70px] w-full font-bold text-[18px];
   }
 
   /* view */
@@ -215,5 +215,5 @@
 }
 
 .w-md-editor-toolbar {
-  padding: 10px ;
+  padding: 10px;
 }
