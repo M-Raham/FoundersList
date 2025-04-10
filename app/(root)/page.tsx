@@ -8,9 +8,12 @@ export default async function Home({
 }: {
   searchParams: Promise<{ query?: string }>;
 }) {
+  // Search
   const query = (await searchParams).query;
 
-  const { data: posts } = await sanityFetch({ query: STARTUP_QUERY }); // revalidate the page every time new post is created
+  const params = { search: query || null };
+
+  const { data: posts } = await sanityFetch({ query: STARTUP_QUERY, params }); // revalidate the page every time new post is created
 
   return (
     <>
