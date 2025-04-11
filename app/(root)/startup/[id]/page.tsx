@@ -1,11 +1,8 @@
 import React from 'react'
 
-const page = async ({params}: {params: Promise<{id: string}>}) => {
-    const id = (await params).id
+const page = () => {
   return (
-    <>
-    <h1>This is startup number: {id}</h1>
-    </>
+    <div>page</div>
   )
 }
 
