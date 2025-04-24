@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useActionState, useState } from "react";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import MDEditor from "@uiw/react-md-editor";
@@ -10,7 +10,13 @@ import { Send } from "lucide-react";
 const StartupForm = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [pitch, setPitch] = useState("");
-  
+
+  const handleFormSubmit = () => {};
+
+  const [state, formAction, isPending] = useActionState(handleFormSubmit, {
+    error: "",
+    status: "INITIAL",
+  });
 
   return (
     <form action={() => {}} className="startup-form">
@@ -97,9 +103,13 @@ const StartupForm = () => {
         {errors.pitch && <p className="startup-form_error">{errors.link}</p>}
       </div>
 
-      <Button type="submit" className="startup-form_btn text-white" disabled={isPending}>
+      <Button
+        type="submit"
+        className="startup-form_btn text-white"
+        disabled={isPending}
+      >
         {isPending ? "Submitting..." : "Submit Your Pitch"}
-        <Send className="size-6 ml-2"/>
+        <Send className="size-6 ml-2" />
       </Button>
     </form>
   );
