@@ -1,8 +1,8 @@
-import React from 'react'
+"use client"
 
 const StartupForm = () => {
   return (
-    <div>Startupform</div>
+    <form action={() => {}} className='startup-form'>Startupform</form>
   )
 }
 
