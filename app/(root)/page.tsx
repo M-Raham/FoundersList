@@ -15,7 +15,7 @@ export default async function Home({
   const params = { search: query || null };
 
   const session = await auth();
-  console.log(session.id);
+  console.log(session?.id);
   const { data: posts } = await sanityFetch({ query: STARTUP_QUERY, params }); // revalidate the page every time new post is created
 
   return (
