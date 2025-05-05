@@ -2,6 +2,7 @@
 
 import { auth } from "@/auth";
 import { parseServerActionResponse } from "./utils";
+import slugify from "slugify";
 
 export const createPitch = async (
   state: any,
@@ -19,4 +20,16 @@ export const createPitch = async (
   const { title, description, category, link } = Object.fromEntries(
     Array.from(form).filter(([key]) => key !== "pitch")
   );
+
+  const slug = slugify(title as string, { lower: true, strict: true });
+
+  try {
+  } catch (error) {
+    console.log(error);
+
+    return parseServerActionResponse({
+      error: JSON.stringify(error),
+      status: "ERROR",
+    });
+  }
 };
