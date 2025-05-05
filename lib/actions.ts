@@ -15,4 +15,8 @@ export const createPitch = async (
       error: "Not signed in",
       status: "ERROR",
     });
+
+  const { title, description, category, link } = Object.fromEntries(
+    Array.from(form).filter(([key]) => key !== "pitch")
+  );
 };
