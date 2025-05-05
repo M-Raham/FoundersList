@@ -24,6 +24,21 @@ export const createPitch = async (
   const slug = slugify(title as string, { lower: true, strict: true });
 
   try {
+    const startup = {
+      title,
+      description,
+      category,
+      image: link,
+      slug: {
+        _type: slug,
+        current: slug,
+      },
+      author: {
+        _type: "reference",
+        ref: session?.id,
+      },
+      pitch,
+    };
   } catch (error) {
     console.log(error);
 
