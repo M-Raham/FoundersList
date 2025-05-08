@@ -40,7 +40,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
             {session?.id === id ? "Your" : "All"} Startups
           </p>
           <ul className="card_grid-sm">
-            <UserStartups />
+            <UserStartups id={id} />
           </ul>
         </div>
       </section>
