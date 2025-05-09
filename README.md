@@ -119,3 +119,10 @@ Pull requests are welcome! For major changes, please open an issue first.
 
 ---
 
+🌐 Visit the Site
+🔗 https://founderslist.vercel.app/
+
+Explore real startup founders, browse their profiles, and get inspired
+
+---
+
