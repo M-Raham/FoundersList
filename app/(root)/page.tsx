@@ -20,7 +20,7 @@ export default async function Home({
 
   return (
     <>
-      <section className="pink_container pattern">
+      <section className="blue_container pattern">
         <h1 className="heading">
           Pitch your startup, <br /> connect with enterpreneurs
         </h1>
