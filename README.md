@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 🧑‍💼 FoundersList
 
-First, run the development server:
+FoundersList is a modern directory platform for showcasing startup founders, built with **Next.js (TypeScript)** for the frontend and **Sanity** as the backend CMS. It uses **OAuth-based authentication** to manage secure user access and personalized content.
+
+---
+
+## 🚀 Features
+
+* ⚡️ Blazing fast frontend with Next.js and TypeScript
+* 🧠 Headless CMS integration using Sanity.io
+* 🔒 Secure login using OAuth (Google, GitHub, etc.)
+* 📁 Browse profiles of founders and startups
+* 📝 Admin panel (via Sanity Studio) to manage founder data
+* 🔍 Search and filtering for better discovery
+* 🖼️ Dynamic image rendering and rich text bios
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology                   | Role                                           |
+| ---------------------------- | ---------------------------------------------- |
+| **Next.js**                  | React-based frontend framework                 |
+| **TypeScript**               | Type-safe code and components                  |
+| **Sanity.io**                | Headless CMS for content                       |
+| **OAuth**                    | Secure authentication (NextAuth.js or similar) |
+| **Tailwind CSS**  | Utility-first styling                          |
+
+---
+
+## 🧑‍💻 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/founderslist.git
+cd founderslist
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Set up environment variables
+
+Create a `.env.local` file and configure the following variables:
+
+```env
+NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
+NEXT_PUBLIC_SANITY_DATASET=production
+SANITY_API_TOKEN=your_write_token
+
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your_secret
+
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
+
+> 🔐 OAuth can also be set up with GitHub or other providers via `next-auth`.
+
+### 4. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000` to see the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧾 Project Structure
 
-## Learn More
+```
+.
+├── components      # Reusable UI components
+├── pages           # Next.js pages
+├── sanity          # Sanity config and schema files
+├── lib             # Utilities (queries, clients)
+├── styles          # Global styles
+├── public          # Static files (e.g., images)
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧠 Sanity Studio
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To launch Sanity Studio (CMS dashboard):
 
-## Deploy on Vercel
+```bash
+cd sanity
+sanity start
+Or visit
+localhost:3000/studio
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You can manage founder profiles, images, and other content here.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🔒 Authentication
+
+OAuth authentication is handled using [NextAuth.js](https://next-auth.js.org/), supporting multiple providers like Google, GitHub, etc.
+
+---
+
+## 📦 Deployment
+
+You can deploy this project using [Vercel](https://vercel.com/). Make sure to configure all necessary environment variables in the dashboard.
+
+---
+
+## 🙌 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first.
+
+---
+
